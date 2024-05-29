@@ -14,14 +14,8 @@ jobs:
     - name: Restore and cache Nix store
       uses: nix-community/cache-nix-action@v5
       with:
-        # restore and save a cache using this key
-        primary-key: nix-${{ runner.os }}-${{ hashFiles('**/*.nix') }}
-        # if there's no cache hit, restore a cache by this prefix
-        restore-prefixes-first-match: nix-${{ runner.os }}-
-        # collect garbage until Nix store size (in bytes) is at most this number
-        # before trying to save a new cache
+        primary-key: nix-${{ runner.os }}-
         gc-max-store-size-linux: 1073741824
-        # do purge caches
         purge: true
     - uses: cachix/cachix-action@v14
       with:
