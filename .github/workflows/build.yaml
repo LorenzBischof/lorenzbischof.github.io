@@ -17,7 +17,7 @@ jobs:
         primary-key: nix-${{ runner.os }}-
         gc-max-store-size-linux: 1073741824
         purge: true
-    - uses: cachix/cachix-action@v14
+    - uses: cachix/cachix-action@v15
       with:
         name: devenv
     - name: Install devenv.sh
