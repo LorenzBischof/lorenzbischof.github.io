@@ -7,22 +7,32 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
-    - uses: actions/checkout@v4
-    - uses: nixbuild/nix-quick-install-action@v27
-    #- uses: cachix/install-nix-action@v26
-    - name: Restore and cache Nix store
-      uses: nix-community/cache-nix-action@v5
-      with:
-        primary-key: nix-${{ runner.os }}-
-        gc-max-store-size-linux: 1073741824
-        purge: true
-    - uses: cachix/cachix-action@v14
-      with:
-        name: devenv
-    - name: Install devenv.sh
-      run: nix profile install nixpkgs#devenv
-    - name: Run a multi-line command in the devenv shell
-      shell: devenv shell bash -- -e {0}
-      run: |
-        hugo version
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+      - run: nix build
+      - name: Upload static files as artifact
+        id: deployment
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: result
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+

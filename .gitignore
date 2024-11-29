@@ -1,9 +1,4 @@
-# Devenv
-.devenv*
-devenv.local.nix
-
-# direnv
+.hugo_build.lock
+public
 .direnv
-
-# pre-commit
-.pre-commit-config.yaml
+result
