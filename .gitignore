@@ -1,4 +1,5 @@
 .hugo_build.lock
-public
-.direnv
+public/
+.direnv/
 result
+themes/
