@@ -2,3 +2,26 @@ baseURL: https://lorenzbischof.ch/
 languageCode: en-us
 title: Lorenz Bischof
 theme: papermod
+
+params:
+  env: production
+  showReadingTime: true
+  showFullTextInRSS: true
+  editPost:
+    url: https://github.com/LorenzBischof/lorenzbischof.github.io/tree/main/content
+    text: Suggest Changes
+    appendFilePath: true
+  showCodeCopyButtons: true
+  homeInfoParams:
+    title: Hi 👋, I am Lorenz
+    content: Sharing cloud technology insights and experiences, with a focus on Kubernetes, Nix, and related tools.
+
+  socialIcons:
+    - name: linkedin
+      url: https://www.linkedin.com/in/lorenz-bischof/
+    - name: email
+      url: mailto:contact@lorenzbischof.ch
+    - name: github
+      url: https://github.com/LorenzBischof
+    - name: rss
+      url: /index.xml
