@@ -17,11 +17,11 @@ params:
     content: Sharing cloud technology insights and experiences, with a focus on Kubernetes, Nix, and related tools.
 
   socialIcons:
-    - name: linkedin
+    - name: LinkedIn
       url: https://www.linkedin.com/in/lorenz-bischof/
-    - name: email
+    - name: Email
       url: mailto:contact@lorenzbischof.ch
-    - name: github
+    - name: GitHub
       url: https://github.com/LorenzBischof
-    - name: rss
+    - name: RSS
       url: /index.xml
