@@ -2,6 +2,7 @@
 title: 'Manage Secrets in NixOS with a Private Repository'
 date: 2024-12-02
 draft: false
+summary: Hide encrypted secrets and other configuration in a private repository.
 ---
 
 I have been using NixOS for about a year now and have a few notes and things I solved along the way. Sometimes it took a while to figure out how things work and I always wanted to start a blog, so here we are.
