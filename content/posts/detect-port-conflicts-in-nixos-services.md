@@ -280,3 +280,5 @@ Failed assertions:
   - /nix/store/bh57lav832l2a3j98c8qwhpmx3k2gziq-source/hosts/nas/open-webui.nix
   - /nix/store/bh57lav832l2a3j98c8qwhpmx3k2gziq-source/hosts/nas/another-service.nix
 ```
+
+Update: I [posted a link to this post on Discourse](https://discourse.nixos.org/t/detect-port-conflicts-in-nixos-services/61589), which got some attention, with some people suggesting upstreaming to nixpkgs, while others mentioned previous work that was never finished.
